@@ -1,0 +1,561 @@
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
+{ "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 0, "tid": 1, "ts": 1659929970833524, "dur": 922337203685477580, "ph": "X", "name": "Build ScriptAssemblies", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929970834712, "dur": 23358, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929970858276, "dur": 62657, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929970920958, "dur": 391507, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929971312467, "dur": 907574, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929972220057, "dur": 9827, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929975956493, "dur": 922337203685477580, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929975956690, "dur": 3130, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929975959822, "dur": 31668, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929975991493, "dur": 349849, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929976341344, "dur": 1290197, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929977631544, "dur": 13027, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929977645387, "dur": 31, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1659929976070122, "dur": 247281, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976071095, "dur": 42629, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976301311, "dur": 5153, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976306469, "dur": 10910, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976307339, "dur": 9264, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976321360, "dur": 1079, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1659929976320646, "dur": 1817, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929977645573, "dur": 167, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1659929976368178, "dur":1394, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929976369577, "dur":53, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1659929976369643, "dur":19, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1659929976369663, "dur":600, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1659929976370283, "dur":853, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929976371136, "dur":0, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977608721, "dur":305, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609026, "dur":52, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609078, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609083, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609094, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609096, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609106, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609108, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609117, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609119, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609128, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609130, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609140, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609141, "dur":19, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609160, "dur":51, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609211, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609218, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609221, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609229, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609230, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609237, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609238, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609244, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609246, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609251, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609253, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609259, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609261, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609271, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609273, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609278, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609280, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609288, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609303, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977609323, "dur":1663, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1659929976370343, "dur":803, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976371160, "dur":1245, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976372417, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1659929976372419, "dur":388, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976372811, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1659929976372814, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976373096, "dur":2172, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1659929976375269, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1659929976375298, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976375304, "dur":1635, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1659929976376954, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929976376971, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929976376974, "dur":1015100, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977392087, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977392101, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977392106, "dur":19005, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977411125, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977411134, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977411138, "dur":11767, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977422918, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977422934, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977422939, "dur":10410, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977433358, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977433447, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977433451, "dur":19139, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977452602, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977452616, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977452620, "dur":20132, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977472770, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977472785, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977472791, "dur":63115, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":1, "ts":1659929977535932, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":1, "ts":1659929977535950, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1659929977535981, "dur":72678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":1, "ts":1659929977608673, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":1, "ts":1659929977608674, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976371085, "dur":112, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976371198, "dur":1220, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976372420, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1659929976372487, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976373861, "dur":1464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1659929976375339, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":2, "ts":1659929976375363, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976375367, "dur":1456, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":2, "ts":1659929976376837, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929976376854, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929976376858, "dur":1014640, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977391516, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977391527, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977391531, "dur":8834, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977400373, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977400386, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977400389, "dur":19255, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977419654, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977419663, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977419666, "dur":10176, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977429850, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977429859, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977429863, "dur":17451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977447324, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977447376, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977447380, "dur":23657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977471070, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977471097, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1659929977471194, "dur":118435, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1659929977589650, "dur":19080, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976370797, "dur":379, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976371176, "dur":1236, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976372417, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1659929976372482, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976374065, "dur":1386, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1659929976375465, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":3, "ts":1659929976375492, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976375497, "dur":2232, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":3, "ts":1659929976377741, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929976377761, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929976377766, "dur":1016066, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977393845, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977393857, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977393861, "dur":19587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977413458, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977413468, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977413472, "dur":10032, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977423513, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977423521, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977423524, "dur":9098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977432632, "dur":186, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977432819, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977432830, "dur":18442, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977451285, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977451336, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977451339, "dur":19703, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977471069, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977471094, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1659929977471133, "dur":118444, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":3, "ts":1659929977589606, "dur":19100, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929976370362, "dur":800, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929976371162, "dur":1251, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929976372417, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1659929976372517, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929976374900, "dur":1411, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":4, "ts":1659929976376325, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929976376342, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929976376779, "dur":1014196, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977390992, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977391000, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977391003, "dur":8676, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977399692, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977399704, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977399709, "dur":19082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977418799, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977418819, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977418822, "dur":10196, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977429027, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977429045, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977429048, "dur":17619, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977446677, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977446722, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977446726, "dur":20539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977467284, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977467304, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977467309, "dur":68769, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":4, "ts":1659929977536098, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/boot.config" }}
+,{ "pid":12345, "tid":4, "ts":1659929977536204, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1659929977536210, "dur":72420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/boot.config" }}
+,{ "pid":12345, "tid":4, "ts":1659929977608645, "dur":79, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929976370481, "dur":685, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929976371166, "dur":1244, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929976372417, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":5, "ts":1659929976372506, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929976374952, "dur":1406, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":5, "ts":1659929976376375, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929976376389, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929976376685, "dur":1014162, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977390858, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977390867, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977390871, "dur":8241, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977399119, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977399128, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977399131, "dur":20211, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977419352, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977419378, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977419382, "dur":10082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977429473, "dur":6, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977429481, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977429484, "dur":15787, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977445280, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977445321, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977445324, "dur":21398, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977466741, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977466759, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977466766, "dur":28854, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":5, "ts":1659929977495642, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1659929977495680, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1659929977495685, "dur":51604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":5, "ts":1659929977547308, "dur":61402, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976370577, "dur":593, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976371170, "dur":1245, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976372417, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1659929976372507, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976374312, "dur":1884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1659929976376215, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":6, "ts":1659929976376240, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976376587, "dur":392164, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":6, "ts":1659929976768762, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929976768772, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929976768783, "dur":627314, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977396106, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977396115, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977396118, "dur":20466, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977416594, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977416604, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977416607, "dur":8951, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977425567, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977425576, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977425593, "dur":7741, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977433343, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977433351, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977433354, "dur":27140, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977460512, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977460529, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977460534, "dur":20577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977481129, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977481163, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977481170, "dur":48166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":6, "ts":1659929977529357, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/level0.resS" }}
+,{ "pid":12345, "tid":6, "ts":1659929977529370, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1659929977529375, "dur":60447, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/level0.resS" }}
+,{ "pid":12345, "tid":6, "ts":1659929977589835, "dur":18902, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976370868, "dur":321, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976371190, "dur":1224, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976372417, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1659929976372489, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976373833, "dur":1812, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":7, "ts":1659929976375658, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929976375686, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976376074, "dur":503461, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929976879554, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929976879576, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929976879582, "dur":517355, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977396946, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977396956, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977396959, "dur":20806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977417775, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977417784, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977417787, "dur":8990, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977426787, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977426795, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977426798, "dur":8195, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977435001, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977435054, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977435057, "dur":25448, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977460522, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977460539, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977460545, "dur":35044, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":7, "ts":1659929977495617, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":7, "ts":1659929977495637, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977495692, "dur":2336, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":7, "ts":1659929977498046, "dur":138, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":7, "ts":1659929977498188, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1659929977498197, "dur":91554, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":7, "ts":1659929977589769, "dur":18938, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929976371198, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929976371199, "dur":1230, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929976372429, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1659929976372490, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929976374125, "dur":1607, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1659929976375746, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929976375781, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929976375785, "dur":1014896, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977390700, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977390721, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977390727, "dur":7180, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977397916, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977397927, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977397930, "dur":20009, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977417948, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977417957, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977417960, "dur":10693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977428661, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977428669, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977428672, "dur":15802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977444483, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977444549, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977444552, "dur":21767, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977466337, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977466358, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977466363, "dur":18571, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977484956, "dur":126, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977485085, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977485092, "dur":37943, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":8, "ts":1659929977523065, "dur":108, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":8, "ts":1659929977523177, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1659929977523190, "dur":66658, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":8, "ts":1659929977589866, "dur":18867, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929976371229, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929976371230, "dur":1200, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929976372430, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1659929976372510, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929976374689, "dur":2011, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":9, "ts":1659929976376715, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929976376734, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929976376797, "dur":1014085, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977390898, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977390911, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977390917, "dur":7315, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977398240, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977398249, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977398252, "dur":20197, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977418459, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977418468, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977418471, "dur":8721, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977427203, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977427212, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977427215, "dur":16847, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977444072, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977444134, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977444138, "dur":20767, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977464924, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977464943, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977464970, "dur":18295, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977483287, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977483303, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977483312, "dur":50119, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":9, "ts":1659929977533455, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/level0" }}
+,{ "pid":12345, "tid":9, "ts":1659929977533471, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1659929977533479, "dur":56295, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/level0" }}
+,{ "pid":12345, "tid":9, "ts":1659929977589794, "dur":18911, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929976371276, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929976371277, "dur":1150, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929976372427, "dur":135, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":10, "ts":1659929976372564, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929976375202, "dur":1937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":10, "ts":1659929976377150, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929976377162, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929976377167, "dur":1015893, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977393070, "dur":187, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977393259, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977393263, "dur":9620, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977402891, "dur":12, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977402905, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977402907, "dur":17728, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977420643, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977420652, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977420656, "dur":11938, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977432603, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977432665, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977432668, "dur":17380, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977450058, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977450105, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977450109, "dur":21371, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977471500, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977471522, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1659929977471528, "dur":75756, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1659929977547310, "dur":61403, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976371256, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976371257, "dur":1174, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976372431, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1659929976372500, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976374130, "dur":1743, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":11, "ts":1659929976375883, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":11, "ts":1659929976375903, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976375907, "dur":468512, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":11, "ts":1659929976844434, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929976844458, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929976844463, "dur":552057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977396530, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977396545, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977396548, "dur":20007, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977416566, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977416575, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977416579, "dur":9416, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977426003, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977426011, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977426014, "dur":8154, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977434176, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977434221, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977434224, "dur":25208, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977459455, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977459471, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977459478, "dur":21626, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977481124, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977481159, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1659929977481168, "dur":73417, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":11, "ts":1659929977554612, "dur":54097, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929976371290, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929976371290, "dur":1140, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929976372430, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":12, "ts":1659929976372497, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929976373879, "dur":1815, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":12, "ts":1659929976375705, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929976375730, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929976376018, "dur":815850, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977191888, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977191904, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977191909, "dur":205384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977397302, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977397310, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977397313, "dur":20227, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977417558, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977417567, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977417571, "dur":9161, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977426743, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977426768, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977426772, "dur":8510, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977435291, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977435331, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977435334, "dur":25101, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977460457, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977460474, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977460480, "dur":15258, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977475759, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977475778, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1659929977475787, "dur":81655, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":12, "ts":1659929977557464, "dur":51239, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929976371307, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929976371307, "dur":1116, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929976372424, "dur":184, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":13, "ts":1659929976372610, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929976375369, "dur":1977, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":13, "ts":1659929976377355, "dur":10, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929976377366, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929976377369, "dur":1015943, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977393321, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977393330, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977393333, "dur":7530, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977400870, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977400880, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977400884, "dur":19235, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977420132, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977420140, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977420143, "dur":10226, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977430381, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977430399, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977430404, "dur":19617, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977450033, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977450083, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977450086, "dur":21260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977471365, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977471383, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1659929977471390, "dur":64758, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":13, "ts":1659929977536167, "dur":72545, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929976371330, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929976371330, "dur":1091, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929976372423, "dur":276, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":14, "ts":1659929976372701, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929976375809, "dur":392855, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":14, "ts":1659929976768679, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929976768698, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929976768701, "dur":626667, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977395383, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977395402, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929977395407, "dur":18051, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977413469, "dur":8, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977413478, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929977413482, "dur":9433, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977422927, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977422938, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929977422941, "dur":9715, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977432676, "dur":311, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977432989, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929977432993, "dur":26031, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977459050, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977459069, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1659929977459101, "dur":77068, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":14, "ts":1659929977536182, "dur":72529, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976371368, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976371368, "dur":1048, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976372417, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":15, "ts":1659929976372487, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976373883, "dur":2028, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":15, "ts":1659929976375928, "dur":461, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka.exe" }}
+,{ "pid":12345, "tid":15, "ts":1659929976376391, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976376395, "dur":392025, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka.exe" }}
+,{ "pid":12345, "tid":15, "ts":1659929976768451, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929976768473, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929976768478, "dur":627065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977395556, "dur":11, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977395569, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977395609, "dur":18882, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977414500, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977414509, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977414512, "dur":10692, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977425214, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977425223, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977425226, "dur":8512, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977433747, "dur":197, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977433945, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977433949, "dur":30389, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977464362, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977464378, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977464387, "dur":16751, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977481155, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977481175, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1659929977481181, "dur":127420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":15, "ts":1659929977608628, "dur":103, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929976371350, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929976371350, "dur":1075, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929976372427, "dur":223, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":16, "ts":1659929976372651, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929976375614, "dur":392810, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":16, "ts":1659929976768457, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929976768475, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929976768479, "dur":627211, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977395702, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977395712, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977395716, "dur":19415, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977415142, "dur":9, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977415153, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977415167, "dur":8731, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977423906, "dur":7, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977423914, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977423917, "dur":20214, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977444141, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977444194, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977444198, "dur":21258, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977465476, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977465493, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977465500, "dur":19449, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":16, "ts":1659929977484966, "dur":92, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":16, "ts":1659929977485061, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977485422, "dur":11286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":16, "ts":1659929977496726, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":16, "ts":1659929977496743, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977496750, "dur":39235, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":16, "ts":1659929977536004, "dur":13, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":16, "ts":1659929977536020, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1659929977536026, "dur":72596, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/DeathWind/Desktop/Big Eater Polka 1.11.2/Big Eater Polka_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":16, "ts":1659929977608642, "dur":93, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1659929977612540, "dur":2373, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1659929977645802, "dur": 893, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1659929977645363, "dur": 1357, "ph": "X", "name": "Write chrome-trace events", "args": {} },
