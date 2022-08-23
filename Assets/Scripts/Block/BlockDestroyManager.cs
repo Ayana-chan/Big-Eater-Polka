@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using DG.Tweening;
+using Cysharp.Threading.Tasks;
 
 public class BlockDestroyManager : MonoBehaviour {
     [Header("Handling lists")]
@@ -24,7 +25,9 @@ public class BlockDestroyManager : MonoBehaviour {
     [Space]
 
     public MainLogic ml;
+    public RoadCreator roadCreator;
     public UI_TopMessageLogic ui_topMessageLogic;
+    public BuffLogic buffLogic;
 
     //called when a block touched
     public void judgeDestoryBlockByType(GameObject block) {
@@ -41,6 +44,7 @@ public class BlockDestroyManager : MonoBehaviour {
         float rangeLength=ml.getBlockLength()/2;//max distance to mid
         float acceptableDistance = 1.1f * rangeLength;
         bool isRightTouch;
+        //judge and destroy certain child
         switch (bl.blockType) {
             case BlockTypeEnum.cureType://cure
                 destroyDegree = DestroyDegreeEnum.tempDes;
@@ -95,28 +99,35 @@ public class BlockDestroyManager : MonoBehaviour {
                 destroyDegree = DestroyDegreeEnum.oneWayDoor;
                 destroyWay = DestroyWayEnum.graduallyTransparent;
                 break;
+            case BlockTypeEnum.woodBoxType:
+                if (buffLogic.getCurrentBuffKind(0) != BuffKindEnum.onFireBuff) {
+                    bl.isFormalDestoryed = false;
+                    return;
+                }
+                destroyDegree = DestroyDegreeEnum.tempDes;
+                destroyWay = DestroyWayEnum.miss;
+                break;
             default:
                 return;//can't be destroyed
         }
         destroyBlockByType(block, destroyDegree, destroyWay);
     }
+
     //start destroy. Can only called after judge.
     private void destroyBlockByType(GameObject block, DestroyDegreeEnum destroyDegree, DestroyWayEnum destroyWay) {
-        BlockLogic bl = block.GetComponent<BlockLogic>();
+        BlockLogic blockLogic = block.GetComponent<BlockLogic>();
         //judge degree list
         switch (destroyDegree) {
             case DestroyDegreeEnum.foreverDes:
-                blockDestroyedForeverList.Add(bl.blockIndexMessage);
+                blockDestroyedForeverList.Add(blockLogic.blockIndexMessage);
                 break;
             case DestroyDegreeEnum.oneWayDoor:
-                blockDestroyedOneWayDoorList.Add(bl.blockIndexMessage);
+                blockDestroyedOneWayDoorList.Add(blockLogic.blockIndexMessage);
                 destoryOnewayDoor(block);
                 return;//no need other destroy
             case DestroyDegreeEnum.tempDes:
-                //copy a back-up, and destory self
-                GameObject backupBlock = Instantiate(block,block.transform.position,block.transform.rotation,block.transform.parent);
-                backupBlock.name = block.name;
-                backupBlock.GetComponent<BlockLogic>().isFormalDestoryed = false;
+                //recreate a back-up, and destory self
+                GameObject backupBlock = roadCreator.createSingleMidBlock(block.transform.localPosition, blockLogic.getBlockType(), blockLogic.getBlockIndexMessage());
                 backupBlock.SetActive(false);
                 blockDestroyedTemporaryList.Add(backupBlock);
                 break;
@@ -139,15 +150,15 @@ public class BlockDestroyManager : MonoBehaviour {
 
     //called when active save
     public void handleDestoryWhenRest() {
-        StartCoroutine(resetBlockIEnumerator());
+        resetBlockAsync();
     }
 
-    private IEnumerator resetBlockIEnumerator() {
+    private async void resetBlockAsync() {
         processResetBlock = 0;//reset progress
         int num = blockWaitForDestroyList.Count+blockDestroyedTemporaryList.Count;
         if (num == 0) { //no any block
             processResetBlock = 1;
-            yield break;
+            return;
         }
         int cnt = 0;
         //destroy
@@ -157,7 +168,7 @@ public class BlockDestroyManager : MonoBehaviour {
             cnt++;
             if (cnt == blockResetPerFrame) {
                 cnt = 0;
-                yield return null;//load next frame
+                await UniTask.Yield();//load next frame
             }
         }
         blockWaitForDestroyList.Clear();
@@ -168,7 +179,7 @@ public class BlockDestroyManager : MonoBehaviour {
             cnt++;
             if (cnt == blockResetPerFrame) {
                 cnt = 0;
-                yield return null;//load next frame
+                await UniTask.Yield();//load next frame
             }
         }
         blockDestroyedTemporaryList.Clear();

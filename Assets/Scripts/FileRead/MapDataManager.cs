@@ -28,6 +28,7 @@ public class MapDataManager : MonoBehaviour {
         DirectoryInfo[] mapsOfLevelsPathInfos = mapDatasPathInfo.GetDirectories();
         maxNumberOfLevels = mapsOfLevelsPathInfos.Length;
         mapDatasArray = new BlockTypeEnum[maxNumberOfLevels][][][];//1st index
+        firstBornIndex = new Vector3[maxNumberOfLevels];
         int level;
         int layer;
         string layerData;
@@ -42,7 +43,7 @@ public class MapDataManager : MonoBehaviour {
             int.TryParse(mapFolder.Name, out level);//Level assigned
             layerFiles = mapFolder.GetFiles("*.txt");//no meta file
             mapDatasArray[level] = new BlockTypeEnum[layerFiles.Length][][];//2nd index
-            firstBornIndex = new Vector3[layerFiles.Length];
+            //firstBornIndex = new Vector3[layerFiles.Length];//长度有问题----
             //read every layer
             foreach (FileInfo layerFile in layerFiles) {
                 string realLayerName = layerFile.Name.Substring(0, layerFile.Name.Length - 4);
@@ -54,21 +55,17 @@ public class MapDataManager : MonoBehaviour {
                 //analysis text
                 linesDatas = layerData.Split(new char[] { '\n' });
                 rowSize = linesDatas.Length - 1;//there would be an empty line at the end
-                colSize = (linesDatas[0].Length + 1) / 2;
                 mapDatasArray[level][layer] = new BlockTypeEnum[rowSize][];
                 //read every line
                 for (int row = 0; row < rowSize; row++) {
+                    singleLineData = linesDatas[row].Split(new char[] { '\t','\n','\r' });
+                    colSize = singleLineData.Length-1;//last must be empty
                     mapDatasArray[level][layer][row] = new BlockTypeEnum[colSize];//3rd index
-                    singleLineData = linesDatas[row].Split(new char[] { '\t' });
                     //read every item
                     for (int col = 0; col < colSize; col++) {
-                        if (col < singleLineData.Length) {
-                            mapDatasArray[level][layer][row][col] = blockTypeManager.transNumToType(singleLineData[col][0]);
-                            if (singleLineData[col][0] == '-') {//set first born place
-                                firstBornIndex[level] = new Vector3(layer, col, row);
-                            }
-                        } else {//be empty default
-                            mapDatasArray[level][layer][row][col] = BlockTypeEnum.empty;
+                        mapDatasArray[level][layer][row][col] = blockTypeManager.transStrToType(singleLineData[col]);
+                        if (singleLineData[col] == "-") {//set first born place
+                            firstBornIndex[level] = new Vector3(layer, col, row);
                         }
                     }
                 }

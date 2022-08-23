@@ -33,12 +33,12 @@ public class BezierMoveLogic : MonoBehaviour {
             p1 = Vector3.Lerp(startPoint, midPoint, insertRatio);
             p2 = Vector3.Lerp(midPoint, target.position, insertRatio);
             p = Vector3.Lerp(p1, p2, insertRatio);
-            yield return StartCoroutine(moveToPointIEnumerable(p));//won't calculate next point until move to the point
+            yield return StartCoroutine(moveToPointIEnumerator(p));//won't calculate next point until move to the point
         }
         StartCoroutine(moveToTargetStraightIEnumerable(target));
     }
 
-    private IEnumerator moveToPointIEnumerable(Vector3 p) {
+    private IEnumerator moveToPointIEnumerator(Vector3 p) {
         Vector3 dir;
         while (Vector3.Distance(transform.position, p) > 0.1f) {
             dir = p - transform.position;

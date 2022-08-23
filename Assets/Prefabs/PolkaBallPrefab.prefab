@@ -198,7 +198,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e9bc6c9a4728778449655dbff5e76fb9, type: 2}
   baseForce: 5
   maxMoveSpeed: 6
-  maxYSpeed: 3
+  maxYSpeed: 10
   restMoveSpeed: 1
   jumpHight: 1.2
   jumpCDLength: 2

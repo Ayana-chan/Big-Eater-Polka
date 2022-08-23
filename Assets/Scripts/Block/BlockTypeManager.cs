@@ -8,30 +8,32 @@ public class BlockTypeManager : MonoBehaviour
     public Material[] materialOfBlockTypes;
 
     //here to deside which char means which type
-    public BlockTypeEnum transNumToType(char blockTypeNum) {
-        switch (blockTypeNum) {
-            case '0':
+    public BlockTypeEnum transStrToType(string blockTypeStr) {
+        switch (blockTypeStr) {
+            case "0":
                 return BlockTypeEnum.defaultType;
-            case '1':
+            case "reborn":
                 return BlockTypeEnum.rebornType;
-            case '-'://first reborn place
+            case "-"://first reborn place
                 return BlockTypeEnum.rebornType;
-            case '2':
+            case "jump":
                 return BlockTypeEnum.jumpType;
-            case '3':
+            case "cure":
                 return BlockTypeEnum.cureType;
-            case '4':
+            case "fire":
                 return BlockTypeEnum.fireType;
-            case '5':
+            case "ice":
                 return BlockTypeEnum.iceType;
-            case 'a':
+            case "owdE":
                 return BlockTypeEnum.onewayDoor_E;
-            case 'b':
+            case "owdS":
                 return BlockTypeEnum.onewayDoor_S;
-            case 'c':
+            case "owdW":
                 return BlockTypeEnum.onewayDoor_W;
-            case 'd':
+            case "owdN":
                 return BlockTypeEnum.onewayDoor_N;
+            case "wood":
+                return BlockTypeEnum.woodBoxType;
             default:
                 return BlockTypeEnum.empty;
         }
@@ -42,7 +44,7 @@ public class BlockTypeManager : MonoBehaviour
     }
 
     //here to deside which type use which material
-    public void initTransMaterialDic() {
+    private void initTransMaterialDic() {
         transMaterialDic = new Dictionary<BlockTypeEnum, Material>();
         transMaterialDic.Add(BlockTypeEnum.defaultType, materialOfBlockTypes[0]);
         transMaterialDic.Add(BlockTypeEnum.rebornType, materialOfBlockTypes[1]);
@@ -54,9 +56,14 @@ public class BlockTypeManager : MonoBehaviour
         transMaterialDic.Add(BlockTypeEnum.onewayDoor_S, materialOfBlockTypes[6]);
         transMaterialDic.Add(BlockTypeEnum.onewayDoor_W, materialOfBlockTypes[6]);
         transMaterialDic.Add(BlockTypeEnum.onewayDoor_N, materialOfBlockTypes[6]);
+        transMaterialDic.Add(BlockTypeEnum.woodBoxType, materialOfBlockTypes[7]);
     }
 
     private Dictionary<BlockTypeEnum, Material> transMaterialDic;
+
+    private void Awake() {
+        initTransMaterialDic();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,18 +76,4 @@ public class BlockTypeManager : MonoBehaviour
     {
         
     }
-}
-
-public enum BlockTypeEnum {
-    empty,//no block
-    defaultType,
-    rebornType,
-    jumpType,
-    cureType,
-    fireType,
-    iceType,
-    onewayDoor_E,
-    onewayDoor_S,
-    onewayDoor_W,
-    onewayDoor_N,
 }

@@ -134,7 +134,7 @@ public class BlockLogic : MonoBehaviour
 */
 [System.Serializable]
 public struct BlockIndexMessage {
-    public int level;
+    public int level;//easy to judge level
     public int layer;
     public int row;
     public int col;

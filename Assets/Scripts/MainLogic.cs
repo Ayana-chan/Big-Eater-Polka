@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Cysharp.Threading.Tasks;
+
 public class MainLogic : MonoBehaviour {
     public int level;
-
     [Tooltip("The length of each blocks' edge")]
     public float blockLength = 1;
     public float ballDiameter = 0.8f;
@@ -28,12 +29,13 @@ public class MainLogic : MonoBehaviour {
 
     public SaveDataManager saveDataManager;
     public MapDataManager mapDataManager;
-    public UI_LoadLogic ui_loadLogic;
+    public UI_BarLogic ui_loadLogic;
     public GameObject mainCamera;
     public GameObject gamePlace;
     public RoadCreator roadCreator;
     public BlockTypeManager blockTypeManager;
     public BlockDestroyManager blockDestroyManager;
+    public RestLogic restLogic;
 
     //A function for many movement
     //f(x)=2S/T^2 * x^2
@@ -53,18 +55,22 @@ public class MainLogic : MonoBehaviour {
         return deltaY;//wouldn't be a unexpected value.Just judge when to escape this movement(t>=rightBound).
     }
 
+    /// <summary>
+    /// Two load functions
+    /// auto set ball grivaty true when load complete
+    /// </summary>
     public void loadAfterNewMap() {
         isInControl = false;
         setIsLoading(true);
         ui_loadLogic.setLoadingValueMode(0);
-        StartCoroutine(roadCreationIEnumerator(reallyLoadObjectDelayTime));
+        roadCreationAsync(reallyLoadObjectDelayTime);
     }
 
     public void loadAfterRest() {
         isInControl = false;
         setIsLoading(true);
         ui_loadLogic.setLoadingValueMode(1);
-        StartCoroutine(blockResetIEnumerator(reallyLoadObjectDelayTime));
+        blockResetAsync(reallyLoadObjectDelayTime);
     }
 
     GameObject ball;
@@ -84,13 +90,12 @@ public class MainLogic : MonoBehaviour {
         saveDataManager.savePath = Application.dataPath + "/Data/save.sa";
         saveDataManager.loadByDeserialization();
 
-        blockTypeManager.initTransMaterialDic();
-
-        StartCoroutine(afterLoadingIEnumerator());//read progress and deside how to take control
+        //StartCoroutine(afterLoadingIEnumerator());//read progress and deside how to take control
+        afterLoading();
 
         level = 0;
 
-        createBall();
+        initBall();
 
     }
 
@@ -116,7 +121,7 @@ public class MainLogic : MonoBehaviour {
         //}
         //press Z to active save
         if (Input.GetKeyDown(KeyCode.Z) && isInControl) {
-            saveDataManager.activeSave();
+            restLogic.rest();
         }
         //
         //save quit functions
@@ -129,7 +134,7 @@ public class MainLogic : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Backspace)) {//也许要禁止？
             Debug.Log("Save and Quit.");
             saveDataManager.saveBySerialization();
-            quitGame();
+            quitGame();//----------没保存完就退出了
         }
         //press F5 to quit without save
         if (Input.GetKeyDown(KeyCode.F5)) {
@@ -138,11 +143,11 @@ public class MainLogic : MonoBehaviour {
         }
     }
 
-    private void createBall() {
-        ball = Instantiate(ballPrefab, gamePlace.transform);
+    private void initBall() {
+        ball = GameObject.Find("/GamePlace/PlayerBall");
         ball.transform.localScale = new Vector3(ballDiameter, ballDiameter, ballDiameter);
         float ballBornHeight = 0.01f + saveDataManager.currentSave.rebornBlockPos_Y + blockLength / 2 + ballDiameter / 2;
-        ball.transform.localPosition = new Vector3(saveDataManager.currentSave.rebornBlockPos_X,ballBornHeight, saveDataManager.currentSave.rebornBlockPos_Z);
+        ball.transform.localPosition = new Vector3(saveDataManager.currentSave.getRebornBlockPos().x,ballBornHeight, saveDataManager.currentSave.getRebornBlockPos().z);
         //call camera to follow ball
         cameraLogic.setTarget(ball);
         ballLogic = ball.GetComponent<BallLogic>();
@@ -157,30 +162,34 @@ public class MainLogic : MonoBehaviour {
     }
 
     //
-    //read progress and deside how to take control. Used any time.
-    private IEnumerator afterLoadingIEnumerator() {
+    //read progress and deside how to take control. Active any time.
+    private async void afterLoading() {
         while (true) {
-            yield return null;
-            yield return new WaitUntil(() => isLoading && isStart && ui_loadLogic.judgeLoadCompelete());//待优化
+            await UniTask.Yield();
+            await UniTask.WaitUntil(() => isStart && isLoading && ui_loadLogic.judgeLoadCompelete());
             //ready
             switch (ui_loadLogic.loadingValueMode) {
                 case 0:
-                    StartCoroutine(leaveLoadingDelayIEnumerator(1.5f));
-                    StartCoroutine(giveControlDelayIEnumerator(2.5f));
+                    leaveLoadingDelayAsync(1.5f);
+                    giveControlDelayAsync(2.5f);
                     break;
                 case 1:
-                    StartCoroutine(leaveLoadingDelayIEnumerator(0.8f));
-                    StartCoroutine(giveControlDelayIEnumerator(1.8f));
+                    leaveLoadingDelayAsync(0.8f);
+                    giveControlDelayAsync(1.8f);
                     break;
                 default:
                     Debug.LogError("ERROR: Unexpected LoadingValueMode.");
                     break;
             }
-            yield return new WaitUntil(() => !isLoading);
+            await UniTask.WaitUntil(() => !isLoading);
         }
     }
-    private IEnumerator leaveLoadingDelayIEnumerator(float delayTime) {
-        yield return new WaitForSecondsRealtime(delayTime);
+
+    private async void leaveLoadingDelayAsync(float delayTime) {
+        //set ball
+        ballLogic.getRigidBody().useGravity = true;
+        ball.GetComponent<Collider>().enabled = true;
+        await UniTask.Delay(System.TimeSpan.FromSeconds(delayTime),true);
         setIsLoading(false);
         //reset progress
         switch (ui_loadLogic.loadingValueMode) {
@@ -195,18 +204,19 @@ public class MainLogic : MonoBehaviour {
                 break;
         }
     }
-    private IEnumerator giveControlDelayIEnumerator(float delayTime) {
-        yield return new WaitForSecondsRealtime(delayTime);
+
+    private async void giveControlDelayAsync(float delayTime) {
+        await UniTask.Delay(System.TimeSpan.FromSeconds(delayTime), true);
         isInControl = true;
     }
 
-    private IEnumerator roadCreationIEnumerator(float delayTime) {
-        yield return new WaitForSecondsRealtime(delayTime);
+    private async void roadCreationAsync(float delayTime) {
+        await UniTask.Delay(System.TimeSpan.FromSeconds(delayTime), true);
         roadCreator.createRoad();//create road
     }
 
-    private IEnumerator blockResetIEnumerator(float delayTime) {
-        yield return new WaitForSecondsRealtime(delayTime);
+    private async void blockResetAsync(float delayTime) {
+        await UniTask.Delay(System.TimeSpan.FromSeconds(delayTime), true);
         blockDestroyManager.handleDestoryWhenRest();//reset block
     }
 
@@ -218,6 +228,9 @@ public class MainLogic : MonoBehaviour {
     }
     public BallLogic getBallLogic() {
         return ballLogic;
+    }
+    public GameObject getBallInsideTrigger() {
+        return ball.transform.Find("TiggerInside").gameObject;
     }
     public float getBlockLength() {
         return blockLength;
@@ -239,5 +252,8 @@ public class MainLogic : MonoBehaviour {
     public void setIsLoading(bool b) {
         isLoading = b;
         ui_loadLogic.handleLoadEvent();
+    }
+    public void setIsInControl(bool b) {
+        isInControl = b;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoadCreator : MonoBehaviour {
     [Tooltip("If false, no edge blocks")]
     public bool isEdgeEnabled=true;
+    public int edgeHeight = 10;
 
     public float progressBlockCreation=0;
 
@@ -26,12 +27,32 @@ public class RoadCreator : MonoBehaviour {
     private MapDataManager mapDataManager;
     [SerializeField]
     private SaveDataManager saveDataManager;
+    public RebornBlockParticleLogic rebornBlockParticleLogic;
 
-    //
-    //could also used when reset destroyed block
-    public void createSingleMidBlock(float x, float y, float z, BlockTypeEnum blockType, int layer = 0, int row = 0, int col = 0) {
+    public void createRoad() {
+        if (mapData == null) {
+            Debug.LogError("ERROR: Map Data Null.");
+            return;
+        }
+        calCreateRoad();
+
+        StartCoroutine(createMid());//edge creation is call by mid
+    }
+
+    /// <summary>
+    /// BlockPos = BlockIndexMessage * blockLength
+    /// could also used when reset destroyed block
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="z"></param>
+    /// <param name="blockType"></param>
+    /// <param name="layer"></param>
+    /// <param name="row"></param>
+    /// <param name="col"></param>
+    public GameObject createSingleMidBlock(float x, float y, float z, BlockTypeEnum blockType, int layer = 0, int row = 0, int col = 0) {
         if (blockType == BlockTypeEnum.empty) {
-            return;//no create
+            return null;//no create
         }
         GameObject nBlock;
         nBlock = Instantiate(roadMidBlockPrefab, midBlocks);//put into midBlocks
@@ -41,6 +62,10 @@ public class RoadCreator : MonoBehaviour {
         bl.initBlock(blockType, aim);
         nBlock.transform.localScale = new Vector3(blockLength, blockLength, blockLength);
         nBlock.transform.localPosition = new Vector3(x, y, z);
+        //reborn block
+        if (blockType == BlockTypeEnum.rebornType) {
+            rebornBlockParticleLogic.createRebornBlockParticle(nBlock);
+        }
         //one way door
         bool isOnewayDoor = blockType == BlockTypeEnum.onewayDoor_E || blockType == BlockTypeEnum.onewayDoor_S ||
                     blockType == BlockTypeEnum.onewayDoor_W || blockType == BlockTypeEnum.onewayDoor_N;
@@ -51,6 +76,10 @@ public class RoadCreator : MonoBehaviour {
             co.a *= 0.5f;
             mr.material.color = co;
         }
+        return nBlock;
+    }
+    public GameObject createSingleMidBlock(Vector3 pos, BlockTypeEnum blockType, BlockIndexMessage bim) {
+        return createSingleMidBlock(pos.x, pos.y, pos.z, blockType, bim.layer, bim.row, bim.col);
     }
 
     int level;
@@ -67,8 +96,6 @@ public class RoadCreator : MonoBehaviour {
 
     float blockLength;
 
-    int mapHeight;
-
     private int totalOfCreation;
     private int cntOfCreation;
 
@@ -77,8 +104,7 @@ public class RoadCreator : MonoBehaviour {
         blockLength = ml.blockLength;
 
         level = ml.level;
-        mapData = mapDataManager.getMapData(level);
-        mapHeight = mapData.Length;
+        mapData = mapDataManager.getMapData(level);//
 
         Road = GameObject.Find("/GamePlace/Road");
         midBlocks = Road.transform.Find("MidBlocks");
@@ -90,45 +116,61 @@ public class RoadCreator : MonoBehaviour {
 
     }
 
-    public void createRoad() {
-        if (mapData == null) {
-            Debug.LogError("ERROR: Map Data Null.");
-            return;
-        }
-        calCreateRoad();
-        
-        StartCoroutine(createMid());//edge creation is call by mid
-    }
-
     //calculate basic argument
     private void calCreateRoad() {
         mapLayerSize=mapData.Length;
-        mapRowSize = mapData[0].Length;
-        mapColSize = mapData[0][0].Length;
+        if (isEdgeEnabled) {
+            //cal mapRowSize
+            mapRowSize = 0;
+            int temp = 0;
+            for (int i = 0; i < mapLayerSize; i++) {
+                temp = mapData[i].Length;
+                if (temp > mapRowSize) {
+                    mapRowSize = temp;
+                }
+            }
+            //cal mapColSize
+            mapColSize = 0;
+            temp = 0;
+            for (int i = 0; i < mapLayerSize; i++) {
+                for (int j = 0; j < mapData[i].Length; j++) {
+                    temp = mapData[i][j].Length;
+                    if (temp > mapColSize) {
+                        mapColSize = temp;
+                    }
+                }
+            }
+        }
     }
 
     //
     //
     //mid
     private IEnumerator createMid() {
+        totalOfCreation = 0;
+        //let totalOfCreation be the number of rows
+        for (int layer = 0; layer < mapLayerSize; layer++) {
+            totalOfCreation+=mapData[layer].Length;
+        }
         //edge
         if (isEdgeEnabled) {
-            totalOfCreation = (mapRowSize + 2) * (mapColSize + 2);
+            totalOfCreation += 4 * edgeHeight;
             yield return StartCoroutine(createEdge());//create edge first
-        } else {
-            totalOfCreation = mapRowSize * mapColSize;
         }
         //mid
         float x, y, z;
         BlockTypeEnum blockType;
-        for (int row = 0; row < mapRowSize; row++) {
-            for (int col = 0; col < mapColSize; col++) {
-                x = col * blockLength;
-                z = -row * blockLength;
-                //create all layer
-                for (int layer = 0; layer < mapLayerSize; layer++) {
+        for (int layer = 0; layer < mapLayerSize; layer++) {
+            for (int row = 0; row < mapData[layer].Length; row++) {
+                for (int col = 0; col < mapData[layer][row].Length; col++) {
                     blockType = mapData[layer][row][col];
+                    if (blockType == BlockTypeEnum.empty) {
+                        continue;
+                    }
+                    x = col * blockLength;
                     y = layer * blockLength;
+                    z = -row * blockLength;
+                    //create all layer
                     createSingleMidBlock(x, y, z, blockType, layer, row, col);
                     cntOfCreation++;
                     //wait for next frame
@@ -138,7 +180,7 @@ public class RoadCreator : MonoBehaviour {
                     }
                 }
                 //add to progress
-                progressBlockCreation += 1.0f / totalOfCreation;
+                progressBlockCreation += 1f / totalOfCreation;
             }
         }
         progressBlockCreation = 1;
@@ -154,7 +196,7 @@ public class RoadCreator : MonoBehaviour {
             createSeriesEdgeBlock(x, blockLength);
             createSeriesEdgeBlock(x, -mapRowSize * blockLength);
             //add to progress
-            progressBlockCreation += 2.0f / totalOfCreation;
+            progressBlockCreation += 2f / (mapColSize + 2) * edgeHeight / totalOfCreation;
             cntOfCreation += 2;
             //wait for next frame
             if (cntOfCreation >= blockCreatedPerFrame) {
@@ -167,7 +209,7 @@ public class RoadCreator : MonoBehaviour {
             createSeriesEdgeBlock(-blockLength, z);
             createSeriesEdgeBlock(mapColSize * blockLength, z);
             //add to progress
-            progressBlockCreation += 2.0f / totalOfCreation;
+            progressBlockCreation += 2f / mapRowSize * edgeHeight / totalOfCreation;
             cntOfCreation += 2;
             //wait for next frame
             if (cntOfCreation >= blockCreatedPerFrame) {
@@ -178,7 +220,7 @@ public class RoadCreator : MonoBehaviour {
     }
     private void createSeriesEdgeBlock(float x, float z) {
         float y = 0;
-        for (int i = 0; i < mapHeight + 2; i++) {
+        for (int i = 0; i < edgeHeight; i++) {
             GameObject nNode = GameObject.Instantiate(roadEdgeBlockPrefab, edgeBlocks);//put into EdgeBlocks
             nNode.transform.localScale = new Vector3(blockLength, blockLength, blockLength);
             nNode.transform.localPosition = new Vector3(x, y, z);

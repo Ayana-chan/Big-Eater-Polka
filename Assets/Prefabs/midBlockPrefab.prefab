@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3422584141754547931}
   - component: {fileID: -5490923714020794050}
   m_Layer: 0
-  m_Name: midBlockPrefab
+  m_Name: MidBlockPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

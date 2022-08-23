@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using DG.Tweening;
+using Cysharp.Threading.Tasks;
 
 public class BallLogic : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class BallLogic : MonoBehaviour
     [Tooltip("Movement's max speed in XZ")]
     public float maxMoveSpeed = 6;
     [Tooltip("Max speed in Y, avoiding too high jump")]
-    public float maxYSpeed = 3;
+    public float maxYSpeed = 10;
 
     [Space]
 
@@ -52,22 +53,29 @@ public class BallLogic : MonoBehaviour
         }
     }
 
-    public void ballRest(GameObject rebornBlock) {
+    public void ballRest(GameObject rebornBlock,bool isFirstTouch=false) {
         Vector3 rebornBlockPos = rebornBlock.transform.position;
-        Vector3 aimPos = rebornBlockPos + Vector3.up * (0.01f + ml.getBlockLength() / 2 + ml.getBallDiameter() / 2);
-        float moveTime = restMoveSpeed * Vector3.Distance(transform.position, aimPos) / ml.getBlockLength();
+        Vector3 aimPos = rebornBlockPos + Vector3.up * (0.01f + mainLogic.getBlockLength() / 2 + mainLogic.getBallDiameter() / 2);
+        float moveTime = restMoveSpeed * Vector3.Distance(transform.position, aimPos) / mainLogic.getBlockLength();
         rb.useGravity = false;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        resetBallSpeed();
         transform.DOMove(aimPos, moveTime).OnComplete(() => {
             transform.position = aimPos;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            resetBallSpeed();
             rb.useGravity = true;
         });
+        //first touch, change isInControl
+        if (isFirstTouch) {
+            leaveControlAsync(moveTime+1);
+        }
     }
 
-    MainLogic ml;
+    public void resetBallSpeed() {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
+
+    MainLogic mainLogic;
 
     Rigidbody rb;
 
@@ -79,10 +87,10 @@ public class BallLogic : MonoBehaviour
     float right = 0;//x
 
     private void Awake() {
-        ml = GameObject.Find("MainController").GetComponent<MainLogic>();
+        mainLogic = GameObject.Find("MainController").GetComponent<MainLogic>();
 
         rb = GetComponent<Rigidbody>();
-        jumpSpeed = Mathf.Pow(19.62f * jumpHight, 0.5f);
+        jumpSpeed = Mathf.Pow(19.62f * jumpHight, 0.5f);//cal by physics
 
         rb.useGravity = false;
     }
@@ -95,10 +103,10 @@ public class BallLogic : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (!rb.useGravity && !ml.getIsLoading()) {
-            rb.useGravity = true;//start fall
-            Debug.Log("Ball useGravity.");
-        }
+        //if (!rb.useGravity && !mainLogic.getIsLoading()) {
+        //    rb.useGravity = true;//start fall
+        //    Debug.Log("Ball useGravity.");
+        //}
         //input
         if (Input.GetKey(KeyCode.W)) {
             forward = 1;
@@ -118,7 +126,7 @@ public class BallLogic : MonoBehaviour
 
     private void FixedUpdate() {
         //input to move
-        if (ml.getIsInControl()) {
+        if (mainLogic.getIsInControl()) {
             //rb.AddTorque(new Vector3(forward * torque, 0, 0),ForceMode.Impulse);
             //rb.AddTorque(new Vector3(0, 0, -right * torque),ForceMode.Impulse);
             rb.AddForce(new Vector3(forceFunction(right, rb.velocity.x), 0, 0));
@@ -136,7 +144,20 @@ public class BallLogic : MonoBehaviour
 
     //calculate force
     private float forceFunction(float direction, float v) {
-        float f = (direction * ml.getBlockLength() * maxMoveSpeed - v) * baseForce;
+        float f = (direction * mainLogic.getBlockLength() * maxMoveSpeed - v) * baseForce;
         return f;
+    }
+
+    private async void leaveControlAsync(float time) {
+        mainLogic.setIsInControl(false);
+        await UniTask.Delay(System.TimeSpan.FromSeconds(time),true);
+        mainLogic.setIsInControl(true);
+    }
+
+
+
+    //get
+    public Rigidbody getRigidBody() {
+        return rb;
     }
 }

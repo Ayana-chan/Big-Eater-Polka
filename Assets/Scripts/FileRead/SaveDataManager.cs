@@ -4,51 +4,37 @@ using UnityEngine;
 
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using Cysharp.Threading.Tasks;
 
 public class SaveDataManager : MonoBehaviour
 {
-    public bool isAutoSave;
-    public float timeAutoSave=30;
-
     public string savePath;
 
     public SaveStructure currentSave;
 
     [Space]
 
-    public MainLogic ml;
+    public bool isAutoSave;
+    public float timeAutoSave=30;
+
+    [Space]
+
+    public float activeSaveCDLength = 2;
+    public float activeSaveCDRest = 0;
+
+    [Space]
+
+    public MainLogic mainLogic;
     public MapDataManager mapDataManager;
     public BlockDestroyManager blockDestroyManager;
 
-    public void activeSave() {
-        GameObject ball=ml.getBall();
-        BallLogic ballLogic=ball.GetComponent<BallLogic>();
-        if (ball == null) {
-            return;
-        }
-        float checkDuration=ml.getBallDiameter()+ml.getBlockLength()/3;
-        RaycastHit rh;
-        //Debug.DrawRay(ball.transform.position, Vector3.down, Color.red, checkDuration, false);
-        if (Physics.Raycast(ball.transform.position, Vector3.down,out rh, checkDuration)) {
-            GameObject block = rh.collider.gameObject;
-            BlockTypeEnum blockType = block.GetComponent<BlockLogic>().getBlockType();
-            if (blockType == BlockTypeEnum.rebornType) {//reborn block
-                //move to rest place
-                ballLogic.ballRest(block);
-                //reset map
-                ml.loadAfterRest();
-                //save
-                currentSave.changeRebornBlockPos(block.transform.localPosition);
-                saveBySerialization();
-            }
-        }
-    }
     //
     //save data functions
     //save
-    public void saveBySerialization() {
+    public async void saveBySerialization() {
+        await UniTask.SwitchToThreadPool();
         Debug.Log("Saving...");
-        BinaryFormatter bf=new BinaryFormatter();
+        BinaryFormatter bf=new();
         FileStream fs = File.Create(savePath);
         bf.Serialize(fs, currentSave);
         fs.Close();
@@ -57,7 +43,7 @@ public class SaveDataManager : MonoBehaviour
     public void loadByDeserialization() {
         Debug.Log("Loading...");
         if (File.Exists(savePath)) {
-            BinaryFormatter bf = new BinaryFormatter();
+            BinaryFormatter bf = new();
             FileStream fs = File.Open(savePath, FileMode.Open);
             currentSave = bf.Deserialize(fs) as SaveStructure;
             fs.Close();
@@ -69,6 +55,23 @@ public class SaveDataManager : MonoBehaviour
 
     private BallLogic ballLogic;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        autoSaveAsync();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //save cd
+        if (activeSaveCDRest > 0) {
+            activeSaveCDRest -= Time.deltaTime;
+        }
+
+    }
+
     //after load
     private void buildSave() {
         blockDestroyManager.blockDestroyedForeverList = currentSave.blockDestroyedForeverList;
@@ -78,56 +81,26 @@ public class SaveDataManager : MonoBehaviour
     //restart
     private void rebuildSave() {
         currentSave = new SaveStructure();
-        currentSave.changeRebornBlockPos(mapDataManager.getFirstBornPlace(0));
+        currentSave.setRebornBlockPos(mapDataManager.getFirstBornPlace(0) * mainLogic.getBlockLength());
         currentSave.blockDestroyedForeverList = new List<BlockIndexMessage>();
         currentSave.blockDestroyedOneWayDoorList = new List<BlockIndexMessage>();
+        currentSave.rebornBlockTouchedSet = new HashSet<BlockIndexMessage>();
         buildSave();
     }
 
-    private IEnumerator autoSave() {
+    private async void autoSaveAsync() {
         while (true) {
-            yield return new WaitForSeconds(timeAutoSave);
+            await UniTask.Delay(System.TimeSpan.FromSeconds(timeAutoSave), true);
             if (isAutoSave) {
                 saveBySerialization();
             }
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(autoSave());
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}
-
-//
-//
-//choose what to save
-[System.Serializable]
-public class SaveStructure {
-    public int level;
-
-    //reborn position
-    public float rebornBlockPos_X;
-    public float rebornBlockPos_Y;
-    public float rebornBlockPos_Z;
-
-    //block change forever message
-    public List<BlockIndexMessage> blockDestroyedForeverList;
-    public List<BlockIndexMessage> blockDestroyedOneWayDoorList;
-
-    public SaveStructure() { }
-
-    public void changeRebornBlockPos(Vector3 rebornBlockPos) {
-        rebornBlockPos_X=rebornBlockPos.x;
-        rebornBlockPos_Y = rebornBlockPos.y;
-        rebornBlockPos_Z = rebornBlockPos.z;
+    //get
+    public SaveStructure getCurrentSave() {
+        return currentSave;
     }
 }

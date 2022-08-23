@@ -28,6 +28,7 @@ public class BallTriggerInsideLogic : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        Debug.Log("SomeThing get in");
         //cure bullet
         if(other.name == cureName) {
             Destroy(other.gameObject);

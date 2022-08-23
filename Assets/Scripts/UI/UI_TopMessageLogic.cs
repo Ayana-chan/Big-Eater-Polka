@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using Cysharp.Threading.Tasks;
 
 public class UI_TopMessageLogic : MonoBehaviour
 {
@@ -39,8 +40,8 @@ public class UI_TopMessageLogic : MonoBehaviour
 
         alphaStayTimer = 0;
 
-        StartCoroutine(topMessageTextIEnumerator());
-        StartCoroutine(topMessageAlphaIEnumerator());
+        topMessageTextAsync();
+        topMessageAlphaAsync();
 
     }
 
@@ -56,16 +57,15 @@ public class UI_TopMessageLogic : MonoBehaviour
         
     }
 
-    private IEnumerator topMessageTextIEnumerator() {
+    private async void topMessageTextAsync() {
         textC.text = "";
         //Tween tweenFadeDown = textC.DOFade(0f, 5f).SetAutoKill(false).Pause();
         //Tween tweenFadeUp = textC.DOFade(1f, 3f).SetAutoKill(false).Pause();
         while (true) {
-            yield return null;
+            await UniTask.Yield();
             //no message
             if (messagesQueue.Count == 0) {
-                yield return new WaitUntil(()=> messagesQueue.Count != 0);
-                Debug.Log("messagesQueue.Count: " + messagesQueue.Count);
+                await UniTask.WaitUntil(()=> messagesQueue.Count != 0);
             }
             //not empty, reset timer to keep alpha (must together with Dequeue)
             alphaStayTimer = disappearDelayTime;
@@ -74,14 +74,14 @@ public class UI_TopMessageLogic : MonoBehaviour
             textC.text = messagesQueue.Dequeue();
             //tweenFadeUp.Restart();
             //yield return tweenFadeUp.WaitForCompletion();
-            yield return new WaitForSeconds(textChangeTime);
+            await UniTask.Delay(System.TimeSpan.FromSeconds(textChangeTime),true); 
         }
     }
 
-    private IEnumerator topMessageAlphaIEnumerator() {
+    private async void topMessageAlphaAsync() {
         Color newColor;
         while (true) {
-            yield return null;
+            await UniTask.Yield();
             alphaStayTimer -= Time.deltaTime;
             //timer not use up, show
             if (alphaStayTimer > 0) {

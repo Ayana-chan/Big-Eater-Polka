@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockCollisionEvent : MonoBehaviour
 {
     [Header("Cure Block")]
-    public GameObject cureBulletPrefab;
+    public GameObject cureBulletParSysPrefab;
     [Tooltip("Range of mid point")]
     public float cureBulletMoveRange=1.5f;
     public int cureBulletCreationPerSecond = 2;
@@ -25,7 +25,7 @@ public class BlockCollisionEvent : MonoBehaviour
                     uI_topMessageLogic.addTopMessage("¿ÝÎ®...");
                     return;
                 }
-                StartCoroutine(cureBlockCoEventIEnumerator(block));
+                Instantiate(cureBulletParSysPrefab,block.transform.position,block.transform.rotation,block.transform);
                 break;
         }
     }
@@ -40,26 +40,6 @@ public class BlockCollisionEvent : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private IEnumerator cureBlockCoEventIEnumerator(GameObject block) {
-        int cnt = cureBulletNum;
-        float waitToCreate=0;
-        while (true) {
-            yield return new WaitForFixedUpdate();
-            waitToCreate += cureBulletCreationPerSecond * Time.fixedDeltaTime;
-            while (waitToCreate >= 1) {
-                waitToCreate -= 1;
-                cnt--;
-                GameObject cureBullet = Instantiate(cureBulletPrefab, block.transform.position, Quaternion.identity, tempThings);
-                cureBullet.name = "Cure Bullet";
-                BezierMoveLogic bezierMoveLogic = cureBullet.GetComponent<BezierMoveLogic>();
-                bezierMoveLogic.shoot(block.transform.position, block.transform.position + getRandomVector(cureBulletMoveRange), ml.getBall().transform);
-                if (cnt <= 0) {
-                    yield break;
-                }
-            }
-        }
     }
 
     private Vector3 getRandomVector(float r) {
