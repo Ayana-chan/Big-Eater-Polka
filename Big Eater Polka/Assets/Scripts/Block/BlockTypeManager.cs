@@ -10,11 +10,9 @@ public class BlockTypeManager : MonoBehaviour
     //here to deside which char means which type
     public BlockTypeEnum transStrToType(string blockTypeStr) {
         switch (blockTypeStr) {
-            case "0":
+            case "d":
                 return BlockTypeEnum.defaultType;
             case "reborn":
-                return BlockTypeEnum.rebornType;
-            case "-"://first reborn place
                 return BlockTypeEnum.rebornType;
             case "jump":
                 return BlockTypeEnum.jumpType;

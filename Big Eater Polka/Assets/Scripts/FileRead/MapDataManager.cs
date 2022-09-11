@@ -24,49 +24,101 @@ public class MapDataManager : MonoBehaviour {
 
     //one layer,one txt
     public void mapDatasInitialization_2() {
-        DirectoryInfo mapDatasPathInfo = new DirectoryInfo(mapDatasPath);
-        DirectoryInfo[] mapsOfLevelsPathInfos = mapDatasPathInfo.GetDirectories();
-        maxNumberOfLevels = mapsOfLevelsPathInfos.Length;
-        mapDatasArray = new BlockTypeEnum[maxNumberOfLevels][][][];//1st index
-        firstBornIndex = new Vector3[maxNumberOfLevels];
         int level;
         int layer;
-        string layerData;
+        int row;
+        int col;
+        string[] layerDatas;
         string[] linesDatas;//divided by \n
-        string[] singleLineData;//divided by \t
+        string[] singleDatas;
+        string[][][][] stringDatas;//divided by \t
         int rowSize;//max row number(number of lines)
         int colSize;//max col number(depand on first line）
         StreamReader sr;
-        FileInfo[] layerFiles;
+        FileInfo[][] layerFiles;
+        DirectoryInfo mapDatasPathInfo = new DirectoryInfo(mapDatasPath);
+        DirectoryInfo[] mapsOfLevelsPathInfos = mapDatasPathInfo.GetDirectories();
+
+        maxNumberOfLevels = mapsOfLevelsPathInfos.Length;
+        //1st index
+        stringDatas = new string[maxNumberOfLevels][][][];
+
+        layerFiles = new FileInfo[maxNumberOfLevels][];
+        firstBornIndex = new Vector3[maxNumberOfLevels];
+
+        //Read And Parse
         //read every level
+        //read file
         foreach (DirectoryInfo mapFolder in mapsOfLevelsPathInfos) {
-            int.TryParse(mapFolder.Name, out level);//Level assigned
-            layerFiles = mapFolder.GetFiles("*.txt");//no meta file
-            mapDatasArray[level] = new BlockTypeEnum[layerFiles.Length][][];//2nd index
-            //firstBornIndex = new Vector3[layerFiles.Length];//长度有问题----
+            if (!int.TryParse(mapFolder.Name, out level)) {
+                Debug.LogError("ERROR: Unexpected Level File Name.");
+                continue;
+            }
+            //Level assigned
+            layerFiles[level] = mapFolder.GetFiles("*.txt");//no meta file
+            //2nd index
+            stringDatas[level] = new string[layerFiles[level].Length][][];
+        }
+        //read from low to high
+        for (level = 0; level < maxNumberOfLevels; level++) {
             //read every layer
-            foreach (FileInfo layerFile in layerFiles) {
+            layerDatas = new string[layerFiles[level].Length];
+            //read file
+            foreach (FileInfo layerFile in layerFiles[level]) {
                 string realLayerName = layerFile.Name.Substring(0, layerFile.Name.Length - 4);
                 int.TryParse(realLayerName, out layer);//Layer assigned
                 //read text
                 sr = layerFile.OpenText();
-                layerData = sr.ReadToEnd();
+                layerDatas[layer] = sr.ReadToEnd();
                 sr.Close();
+            }
+            //read from low to high
+            for (layer = 0; layer < layerFiles[level].Length; layer++) {
                 //analysis text
-                linesDatas = layerData.Split(new char[] { '\n' });
+                linesDatas = layerDatas[layer].Split(new char[] { '\n' });
                 rowSize = linesDatas.Length - 1;//there would be an empty line at the end
-                mapDatasArray[level][layer] = new BlockTypeEnum[rowSize][];
+                //3rd index
+                stringDatas[level][layer] = new string[rowSize][];
                 //read every line
-                for (int row = 0; row < rowSize; row++) {
-                    singleLineData = linesDatas[row].Split(new char[] { '\t','\n','\r' });
-                    colSize = singleLineData.Length-1;//last must be empty
-                    mapDatasArray[level][layer][row] = new BlockTypeEnum[colSize];//3rd index
-                    //read every item
-                    for (int col = 0; col < colSize; col++) {
-                        mapDatasArray[level][layer][row][col] = blockTypeManager.transStrToType(singleLineData[col]);
-                        if (singleLineData[col] == "-") {//set first born place
-                            firstBornIndex[level] = new Vector3(layer, col, row);
+                for (row = 0; row < rowSize; row++) {
+                    singleDatas = linesDatas[row].Split(new char[] { '\t', '\n', '\r' });
+                    colSize = singleDatas.Length - 1;//last must be empty
+                    //4th index
+                    stringDatas[level][layer][row] = singleDatas;
+                }
+            }
+        }
+
+        //Analyse strings
+        for (level = 0; level < stringDatas.Length; level++) {
+            for (layer = 0; layer < stringDatas[level].Length; layer++) {
+                for (row = 0; row < stringDatas[level][layer].Length; row++) {
+                    for (col = 0; col < stringDatas[level][layer][row].Length; col++) {
+                        //special handle
+                        //set first born place
+                        if (stringDatas[level][layer][row][col] == "-") {
+                            firstBornIndex[level] = new Vector3(layer, col, row);//exchange y&z
+                            stringDatas[level][layer][row][col] = "reborn";
                         }
+                        //multiple blocks
+                        if (judgeMultiple(stringDatas[level][layer][row][col])) {
+                            handleMul(stringDatas, level, layer, row, col);
+                        }
+                    }
+                }
+            }
+        }
+
+        //Trans to type
+        mapDatasArray = new BlockTypeEnum[stringDatas.Length][][][];
+        for (level = 0; level < stringDatas.Length; level++) {
+            mapDatasArray[level] = new BlockTypeEnum[stringDatas[level].Length][][];
+            for (layer = 0; layer < stringDatas[level].Length; layer++) {
+                mapDatasArray[level][layer] = new BlockTypeEnum[stringDatas[level][layer].Length][];
+                for (row = 0; row < stringDatas[level][layer].Length; row++) {
+                    mapDatasArray[level][layer][row] = new BlockTypeEnum[stringDatas[level][layer][row].Length];
+                    for (col = 0; col < stringDatas[level][layer][row].Length; col++) {
+                        mapDatasArray[level][layer][row][col] = blockTypeManager.transStrToType(stringDatas[level][layer][row][col]);
                     }
                 }
             }
@@ -93,6 +145,76 @@ public class MapDataManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    /// <summary>
+    /// means some the same block on it
+    /// </summary>
+    /// <returns></returns>
+    private bool judgeMultiple(string s) {
+        if (s.Length > 1 && s[0]=='m' && judgeDigit(s[1])) {
+            return true;
+        }
+        return false;
+    }
+
+    private bool judgeDigit(char c) {
+        if(c >= '0' && c <= '9') {
+            return true;
+        }
+        return false;
+    }
+
+    private void handleMul(string[][][][] stringDatas,int level,int layer,int row,int col) {
+        int startMul = 1;
+        string mulNumStr = "";
+        int mulNum;//if 1, just like no mul
+        while (startMul < stringDatas[level][layer][row][col].Length && judgeDigit(stringDatas[level][layer][row][col][startMul])) {
+            mulNumStr += stringDatas[level][layer][row][col][startMul];
+            startMul++;
+        }
+        string mulS = stringDatas[level][layer][row][col].Substring(startMul);
+        int.TryParse(mulNumStr, out mulNum);
+        //change stringDatas
+        stringDatas[level][layer][row][col] = "";
+        //need more layer
+        if (layer + mulNum > stringDatas[level].Length) {
+            string[][][] temp = new string[layer + mulNum][][];
+            string[][] t0 = new string[0][];//empty basic array
+            for (int l = 0; l < stringDatas[level].Length; l++) {
+                temp[l] = stringDatas[level][l];
+            }
+            for (int l = stringDatas[level].Length; l < layer + mulNum; l++) {
+                temp[l] = t0;//default empty
+            }
+            stringDatas[level] = temp;
+        }
+        for (int aimLayer = layer; aimLayer < layer + mulNum; aimLayer++) {
+            //need more row;
+            if (stringDatas[level][aimLayer].Length <= row) {
+                string[][] temp = new string[row + 1][];
+                for (int r = 0; r < stringDatas[level][aimLayer].Length; r++) {
+                    temp[r] = stringDatas[level][aimLayer][r];
+                }
+                for (int r = stringDatas[level][aimLayer].Length; r <= row; r++) {
+                    temp[r] = new string[0];
+                }
+                stringDatas[level][aimLayer] = temp;
+            }
+            //need more col
+            if (stringDatas[level][aimLayer][row].Length <= col) {
+                string[] temp = new string[col + 1];
+                for (int c = 0; c < stringDatas[level][aimLayer][row].Length; c++) {
+                    temp[c] = stringDatas[level][aimLayer][row][c];
+                }
+                for (int c = stringDatas[level][aimLayer][row].Length; c <= col; c++) {
+                    temp[c] = "";
+                }
+                stringDatas[level][aimLayer][row] = temp;
+            }
+            //assign
+            stringDatas[level][aimLayer][row][col] = mulS;
+        }
     }
 
 
