@@ -1277,7 +1277,7 @@ ScriptsOnlyBuild:
     className: BallTriggerInsideLogic
   - hash:
       serializedVersion: 2
-      Hash: a71e6d38eab452a83a53e989888d5d81
+      Hash: 76eb2be373cdcc9e2bd81ca558068ed8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MapDataManager

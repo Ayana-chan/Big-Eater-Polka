@@ -18,6 +18,10 @@ public class MapDataManager : MonoBehaviour {
 
     [Space]
 
+    public bool isMulBlockCoverUp=false;
+
+    [Space]
+
     public MainLogic ml;
     public SaveDataManager saveDataManager;
     public BlockTypeManager blockTypeManager;
@@ -212,8 +216,10 @@ public class MapDataManager : MonoBehaviour {
                 }
                 stringDatas[level][aimLayer][row] = temp;
             }
-            //assign
-            stringDatas[level][aimLayer][row][col] = mulS;
+            if (isMulBlockCoverUp || stringDatas[level][aimLayer][row][col] == "") {
+                //assign
+                stringDatas[level][aimLayer][row][col] = mulS;
+            }
         }
     }
 
